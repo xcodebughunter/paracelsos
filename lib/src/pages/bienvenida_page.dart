@@ -28,7 +28,7 @@ class BienvenidaPage extends StatelessWidget {
               children: <Widget>[
                 Image(
                   image: AssetImage('assets/images/logo_vertical.png'),
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  width: MediaQuery.of(context).size.width * 0.7,
                 ).pOnly(bottom: 40.0).centered(),
                 Text(
                   'Toma el control de tu salud',

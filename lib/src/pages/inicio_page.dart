@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'package:provider/provider.dart';
+import 'package:paracelos/src/shared_preferences/preferencias_usuario.dart';
 
 // Pages
 import 'package:paracelos/src/pages/noticias_page.dart';
@@ -10,9 +12,11 @@ import 'package:paracelos/src/pages/productos_page.dart';
 import 'package:paracelos/src/pages/usuario_page.dart';
 
 class InicioPage extends StatelessWidget {
+  final prefs = new PreferenciasUsuario();
 
   @override
   Widget build(BuildContext context) {
+    prefs.bienvenida = true;
     return ChangeNotifierProvider(
       create: (_) => new _NavegacionModel(),
       child: Scaffold(
@@ -35,7 +39,68 @@ class _NavegacionLateral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer();
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).accentColor
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image(
+                  width: 100,
+                  image: AssetImage('assets/images/logo_vertical.png')
+                )
+              ],
+            )
+          ).pOnly(bottom: 10.0),
+          ListTile(
+            leading: Icon(Icons.question_answer, color: Theme.of(context).accentColor),
+            title: Text('Chat'),
+            trailing: Icon( Icons.keyboard_arrow_right ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/chat');
+            }
+          ),
+          ListTile(
+            leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
+            title: Text('Contacto'),
+            trailing: IconButton(
+              icon: Icon( Icons.keyboard_arrow_right ),
+              onPressed: () { },
+            )
+          ),
+          ListTile(
+            leading: Icon(Icons.person, color: Theme.of(context).accentColor),
+            title: Text('Autoría'),
+            trailing: IconButton(
+              icon: Icon( Icons.keyboard_arrow_right ),
+              onPressed: () { },
+            )
+          ),
+          ListTile(
+            leading: Icon(Icons.receipt, color: Theme.of(context).accentColor),
+            title: Text('Términos y condiciones'),
+            trailing: IconButton(
+              icon: Icon( Icons.keyboard_arrow_right ),
+              onPressed: () { },
+            )
+          ),
+          ListTile(
+            leading: Icon(Icons.receipt, color: Theme.of(context).accentColor),
+            title: Text('Políticas de privacidad'),
+            trailing: IconButton(
+              icon: Icon( Icons.keyboard_arrow_right ),
+              onPressed: () { },
+            )
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -67,8 +132,8 @@ class _Navegacion extends StatelessWidget {
             title: Text('Noticias'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            title: Text('Preguntar'),
+            icon: Icon(Icons.add_shopping_cart),
+            title: Text('Productos'),
           ),
           BottomNavigationBarItem(
             icon: Image(
@@ -78,12 +143,12 @@ class _Navegacion extends StatelessWidget {
             title: Text('')
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_shopping_cart),
-            title: Text('Productos'),
+            icon: Icon(Icons.group),
+            title: Text('Conferencias'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.perm_identity),
-            title: Text('Usuario'),
+            icon: Icon(Icons.videocam),
+            title: Text('Asesorías'),
           ),
         ])
     );
@@ -120,8 +185,8 @@ class _Paginas extends StatelessWidget {
 
 class _NavegacionModel with ChangeNotifier{
 
-  int _paginaActual = 0;
-  PageController _pageController = new PageController();
+  int _paginaActual = 2;
+  PageController _pageController = new PageController(initialPage: 2);
 
 
   int get paginaActual => this._paginaActual;

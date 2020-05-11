@@ -32,6 +32,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  #Shared preferences
+  shared_preferences: ^0.5.7+1
+
+  # Http package
+  http: ^0.12.1
+
+  #Html
+  flutter_html: ^0.11.1
+
+  # Use to format Date
+  intl: ^0.15.8
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
