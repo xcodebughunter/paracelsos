@@ -39,7 +39,7 @@ class _ParacelsosPageState extends State<ParacelsosPage> {
             _banner(_screenSize),
             Text('Última noticia', style: GoogleFonts.roboto(fontSize: 20.0)).py12(),
             Divider(
-              color: Color(0xFFA4F4F0),
+              color: Color(0xFF1C3664),
               height: 0.0,
               thickness: 5.0,
               indent: _screenSize.width * 0.40,

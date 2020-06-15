@@ -24,7 +24,7 @@ class InicioPage extends StatelessWidget {
         drawer: _NavegacionLateral(),
         appBar: AppBar(
           title: Image(
-            image: AssetImage('assets/images/logo_horizontal.png'),
+            image: AssetImage('assets/images/logo_horizontal_blue.png'),
             width: MediaQuery.of(context).size.width * 0.5,
           ),
         ),
@@ -52,51 +52,46 @@ class _NavegacionLateral extends StatelessWidget {
               children: <Widget>[
                 Image(
                   width: 100,
-                  image: AssetImage('assets/images/logo_vertical.png')
+                  image: AssetImage('assets/images/logo_vertical_blue.png')
                 )
               ],
             )
           ).pOnly(bottom: 10.0),
           ListTile(
-            leading: Icon(Icons.question_answer, color: Theme.of(context).accentColor),
-            title: Text('Chat'),
+            leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
+            title: Text('Contacto'),
             trailing: Icon( Icons.keyboard_arrow_right ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/chat');
+              Navigator.pushNamed(context, '/contacto');
             }
-          ),
-          ListTile(
-            leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
-            title: Text('Contacto'),
-            trailing: IconButton(
-              icon: Icon( Icons.keyboard_arrow_right ),
-              onPressed: () { },
-            )
           ),
           ListTile(
             leading: Icon(Icons.person, color: Theme.of(context).accentColor),
             title: Text('Autoría'),
-            trailing: IconButton(
-              icon: Icon( Icons.keyboard_arrow_right ),
-              onPressed: () { },
-            )
+            trailing: Icon( Icons.keyboard_arrow_right ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/autoria');
+            }
           ),
           ListTile(
             leading: Icon(Icons.receipt, color: Theme.of(context).accentColor),
             title: Text('Términos y condiciones'),
-            trailing: IconButton(
-              icon: Icon( Icons.keyboard_arrow_right ),
-              onPressed: () { },
-            )
+            trailing: Icon( Icons.keyboard_arrow_right ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/terminos');
+            }
           ),
           ListTile(
             leading: Icon(Icons.receipt, color: Theme.of(context).accentColor),
             title: Text('Políticas de privacidad'),
-            trailing: IconButton(
-              icon: Icon( Icons.keyboard_arrow_right ),
-              onPressed: () { },
-            )
+            trailing: Icon( Icons.keyboard_arrow_right ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/politicas');
+            }
           )
         ],
       ),

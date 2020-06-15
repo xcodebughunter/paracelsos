@@ -4,7 +4,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 class BienvenidaPage extends StatelessWidget {
 
-  final List<Color> _colors = [Color(0xFF116ebc), Color(0xFF7795fc)];
+  final List<Color> _colors = [Color(0xFF1C3664), Color(0xFF1C3664)];
   final List<double> _stops = [0.0, 0.7];
 
   @override
@@ -12,7 +12,6 @@ class BienvenidaPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.red,
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -27,7 +26,7 @@ class BienvenidaPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Image(
-                  image: AssetImage('assets/images/logo_vertical.png'),
+                  image: AssetImage('assets/images/logo_vertical_blue.png'),
                   width: MediaQuery.of(context).size.width * 0.7,
                 ).pOnly(bottom: 40.0).centered(),
                 Text(
@@ -37,15 +36,15 @@ class BienvenidaPage extends StatelessWidget {
                   )
                 ).pSymmetric(v: 30.0),
                 RaisedButton(
-                  color: Color(0xFFA4F4F0),
-                  textColor: Color(0xFF1B1638),
+                  color: Color(0xFFA2ADBC),
+                  textColor: Color(0xFFFFFFFF),
                   child: Text('Empezar', style: GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),),
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/inicio');
                   },
                   padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
                   shape: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFFA4F4F0)),
+                    borderSide: BorderSide(color: Color(0xFFA2ADBC)),
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.0)
                       )

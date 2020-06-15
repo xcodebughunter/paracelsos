@@ -23,12 +23,14 @@ class Noticia {
   String status;
   String titulo;
   String fecha;
+  String alias;
   String contenido;
   Image imagen;
 
   Noticia({
     this.status,
     this.titulo,
+    this.alias,
     this.fecha,
     this.contenido,
     this.imagen,
@@ -37,6 +39,7 @@ class Noticia {
   Noticia.fromJsonMap( Map<String, dynamic> json ) {
 
     status        = json['status'];
+    alias         = json['alias'];
     titulo        = json['titulo'];
     fecha         = json['fecha'];
     contenido     = json['contenido'];

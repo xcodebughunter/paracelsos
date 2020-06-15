@@ -5,6 +5,7 @@ import 'dart:convert';
 
 import 'package:paracelos/src/models/banner_model.dart';
 import 'package:paracelos/src/models/noticia_model.dart';
+import 'package:paracelos/src/models/secciones_model.dart';
 
 class DirectusProvider {
   
@@ -57,6 +58,68 @@ class DirectusProvider {
 
     _cargandoNoticia = false;
     return noticias.items;
+  }
 
+
+  bool _cargandoAutoria     = false;
+  Future<Seccion> obtenerAutoria() async {
+
+    if ( _cargandoAutoria ) return null;
+
+    _cargandoAutoria = true;
+
+    final url = Uri.https(_url, 'paracelsos/items/secciones/3', {
+    });
+
+    final resp = await http.get( url, headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' } );
+    final decodedData = json.decode(utf8.decode(resp.bodyBytes));
+
+    
+    final seccion = new Secciones.fromJson(decodedData['data']);
+
+    _cargandoAutoria = false;
+    return seccion.data;
+  }
+
+
+  bool _cargandoTerminos     = false;
+  Future<Seccion> obtenerTerminos() async {
+
+    if ( _cargandoTerminos ) return null;
+
+    _cargandoTerminos = true;
+
+    final url = Uri.https(_url, 'paracelsos/items/secciones/2', {
+    });
+
+    final resp = await http.get( url, headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' } );
+    final decodedData = json.decode(utf8.decode(resp.bodyBytes));
+
+    
+    final seccion = new Secciones.fromJson(decodedData['data']);
+
+    _cargandoTerminos = false;
+    return seccion.data;
+  }
+
+
+  bool _cargandoPoliticas     = false;
+  Future<Seccion> obtenerPoliticas() async {
+
+    if ( _cargandoPoliticas ) return null;
+
+    _cargandoPoliticas = true;
+
+    final url = Uri.https(_url, 'paracelsos/items/secciones/1', {
+    });
+
+    final resp = await http.get( url, headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' } );
+    final decodedData = json.decode(utf8.decode(resp.bodyBytes));
+
+    
+    final seccion = new Secciones.fromJson(decodedData['data']);
+
+    _cargandoPoliticas = false;
+    return seccion.data;
   }
 }

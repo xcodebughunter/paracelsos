@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:paracelos/src/pages/autoria_page.dart';
 
 // Pages
 import 'package:paracelos/src/pages/bienvenida_page.dart';
-import 'package:paracelos/src/pages/chat_page.dart';
+import 'package:paracelos/src/pages/contacto_page.dart';
 import 'package:paracelos/src/pages/inicio_page.dart';
+import 'package:paracelos/src/pages/politicas_page.dart';
+import 'package:paracelos/src/pages/terminos_page.dart';
 
 // Theme
 import 'package:paracelos/src/theme/tema.dart';
@@ -36,7 +39,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/'             : ( BuildContext context ) => BienvenidaPage(),
         '/inicio'       : ( BuildContext context ) => InicioPage(),
-        '/chat'         : ( BuildContext context ) => ChatPage(),
+        '/contacto'     : ( BuildContext context ) => ContactoPage(),
+        '/autoria'      : ( BuildContext context ) => AutoriaPage(),
+        '/terminos'     : ( BuildContext context ) => TerminosPage(),
+        '/politicas'    : ( BuildContext context ) => PoliticasPage(),
       },
       theme: paracelsosTheme
     );
