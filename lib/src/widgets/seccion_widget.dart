@@ -13,20 +13,20 @@ class SeccionItem extends StatelessWidget {
   SeccionItem({ @required this.seccion });
    @override
     Widget build(BuildContext context) {
-      return
-       Container(
+      return SingleChildScrollView(
+       child: Container(
         padding: EdgeInsets.only(bottom: 30.0),
-        color: Color.fromRGBO(63, 93, 178, 0.6),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[ 
-            Text(seccion.seccion),
+            Text(seccion.seccion, style: GoogleFonts.roboto(fontSize: 20)).pOnly(top: 30),
             Html(
-              defaultTextStyle: GoogleFonts.roboto(color: Colors.white, fontSize: 16.0),
+              defaultTextStyle: GoogleFonts.roboto(color: Colors.black, fontSize: 16.0),
               data: seccion.contenido
             ).p12()
           ],
         )
+       )
       );
   }
 }

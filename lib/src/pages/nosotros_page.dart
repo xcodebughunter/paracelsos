@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:paracelos/src/models/secciones_model.dart';
 import 'package:paracelos/src/providers/directus_provider.dart';
+import 'package:paracelos/src/models/secciones_model.dart';
 import 'package:paracelos/src/widgets/seccion_widget.dart';
 
-class PoliticasPage extends StatefulWidget {
+class NosotrosPage extends StatefulWidget {
   @override
-  _PoliticasPageState createState() => _PoliticasPageState();
+  _NosotrosPageState createState() => _NosotrosPageState();
 }
 
-class _PoliticasPageState extends State<PoliticasPage> {
+class _NosotrosPageState extends State<NosotrosPage> {
   final directusProvider = new DirectusProvider();
 
   @override
@@ -25,16 +25,16 @@ class _PoliticasPageState extends State<PoliticasPage> {
       appBar: appBar,
       body: Column(
         children: <Widget>[
-          _politicasSeccion(appBar.preferredSize.height)
+          _nosotrosSeccion(appBar.preferredSize.height)
         ],
       )
     );
   }
 
-  Widget _politicasSeccion(double appBarHeight) {
+  Widget _nosotrosSeccion(double appBarHeight) {
 
     return FutureBuilder(
-      future: directusProvider.obtenerPoliticas(),
+      future: directusProvider.obtenerNosotros(),
       builder: (BuildContext context, AsyncSnapshot<Seccion> snapshot) {
         
         if ( snapshot.hasData ) {

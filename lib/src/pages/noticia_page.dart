@@ -5,62 +5,58 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UsuarioPage extends StatefulWidget {
+class NoticiaPage extends StatefulWidget {
 
   @override
-  _UsuarioPageState createState() => _UsuarioPageState();
+  _NoticiasPageState createState() => _NoticiasPageState();
 }
 
-class _UsuarioPageState extends State<UsuarioPage> {
+class _NoticiasPageState extends State<NoticiaPage> {
   final directusProvider = new DirectusProvider();
 
   @override
   Widget build(BuildContext context) {
   
     final String alias = ModalRoute.of(context).settings.arguments;
-    return SafeArea(
-      child: Scaffold(
+
+    AppBar appBar = AppBar(
+        title: Image(
+          image: AssetImage('assets/images/logo_horizontal_blue.png'),
+          width: MediaQuery.of(context).size.width * 0.5,
+        ),
+      );
+
+    return Scaffold(
         backgroundColor: Color(0xFFE5E5E5),
+        appBar: appBar,
         body: SingleChildScrollView(
           child:
-            _asesoria()
+            _noticia( alias )
           ,
         )
-      )
     );
   }
-  Widget _asesoria() {
+  Widget _noticia(String alias) {
 
     return FutureBuilder(
-      future: directusProvider.obtenerAsistenciaDetalle(),
+      future: directusProvider.obtenerNoticiaDetalle(alias),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         
         if ( snapshot.hasData ) {
-          final asistencia = snapshot.data;
+          final noticia = snapshot.data;
 
           return Container(
             child: Column(children: <Widget>[
               Image(
-                image: NetworkImage( asistencia.imagen.fullUrl ),
+                image: NetworkImage( noticia.imagen.fullUrl ),
                 fit: BoxFit.fill, 
                 width: MediaQuery.of(context).size.width,
               ),
-              Text(asistencia.asesoria, textAlign: TextAlign.center, style: GoogleFonts.roboto(fontSize: 40.0, color: Color(0xFF212529))).py16(),
+              Text(noticia.titulo, textAlign: TextAlign.center, style: GoogleFonts.roboto(fontSize: 40.0, color: Color(0xFF212529))).py16(),
               Html(
                 defaultTextStyle: GoogleFonts.roboto(color: Colors.black, fontSize: 16.0),
-                data: asistencia.descripcion
-              ).p12(),
-              RaisedButton(
-                padding: EdgeInsets.symmetric(horizontal: 40.0),
-                color: Color(0xFF1c3664),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ), 
-                child: Text('Solicitar información', style: GoogleFonts.roboto(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18.0)),
-                onPressed: () => {
-                  Navigator.pushNamed(context, '/chat'),
-                }
-              ).pOnly(top: 30.0)
+                data: noticia.contenido
+              ).p12()
             ],),
           );
         } else {

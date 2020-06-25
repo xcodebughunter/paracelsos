@@ -57,13 +57,22 @@ class _NavegacionLateral extends StatelessWidget {
               ],
             )
           ).pOnly(bottom: 10.0),
+          // ListTile(
+          //   leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
+          //   title: Text('Contacto'),
+          //   trailing: Icon( Icons.keyboard_arrow_right ),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //     Navigator.pushNamed(context, '/contacto');
+          //   }
+          // ),
           ListTile(
-            leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
-            title: Text('Contacto'),
+            leading: Icon(Icons.chat, color: Theme.of(context).accentColor),
+            title: Text('Chat'),
             trailing: Icon( Icons.keyboard_arrow_right ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/contacto');
+              Navigator.pushNamed(context, '/chat');
             }
           ),
           ListTile(
@@ -92,6 +101,15 @@ class _NavegacionLateral extends StatelessWidget {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/politicas');
             }
+          ),
+          ListTile(
+            leading: Icon(Icons.domain, color: Theme.of(context).accentColor),
+            title: Text('Nosotros'),
+            trailing: Icon( Icons.keyboard_arrow_right ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/nosotros');
+            }
           )
         ],
       ),
@@ -113,7 +131,7 @@ class _Navegacion extends StatelessWidget {
       child: BottomNavigationBar(
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xFF5379F5),
+        selectedItemColor: Color(0xFF1C3664),
         unselectedItemColor: Color(0xFFD7DBF4),
         selectedLabelStyle: TextStyle(color: Colors.blue),
         unselectedLabelStyle: TextStyle(color: Colors.blue),
@@ -124,11 +142,11 @@ class _Navegacion extends StatelessWidget {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            title: Text('Noticias'),
+            title: Text('Noticias', style: TextStyle(fontSize: 12)),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_shopping_cart),
-            title: Text('Productos'),
+            title: Text('Productos', style: TextStyle(fontSize: 12)),
           ),
           BottomNavigationBarItem(
             icon: Image(
@@ -139,11 +157,11 @@ class _Navegacion extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.group),
-            title: Text('Conferencias'),
+            title: Text('Conferencias', style: TextStyle(fontSize: 12),),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.videocam),
-            title: Text('Asesorías'),
+            title: Text('Asistencia', style: TextStyle(fontSize: 12)),
           ),
         ])
     );
@@ -164,11 +182,11 @@ class _Paginas extends StatelessWidget {
 
         NoticiasPage(),
 
-        PreguntarPage(),
+        ProductosPage(),
 
         ParacelsosPage(),
 
-        ProductosPage(),
+        PreguntarPage(),
 
         UsuarioPage()
 

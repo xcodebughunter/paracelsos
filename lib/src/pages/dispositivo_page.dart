@@ -5,50 +5,57 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UsuarioPage extends StatefulWidget {
+class DispositivoPage extends StatefulWidget {
 
   @override
-  _UsuarioPageState createState() => _UsuarioPageState();
+  _DispositivoPageState createState() => _DispositivoPageState();
 }
 
-class _UsuarioPageState extends State<UsuarioPage> {
+class _DispositivoPageState extends State<DispositivoPage> {
   final directusProvider = new DirectusProvider();
 
   @override
   Widget build(BuildContext context) {
   
     final String alias = ModalRoute.of(context).settings.arguments;
-    return SafeArea(
-      child: Scaffold(
+
+    AppBar appBar = AppBar(
+        title: Image(
+          image: AssetImage('assets/images/logo_horizontal_blue.png'),
+          width: MediaQuery.of(context).size.width * 0.5,
+        ),
+      );
+
+    return Scaffold(
         backgroundColor: Color(0xFFE5E5E5),
+        appBar: appBar,
         body: SingleChildScrollView(
           child:
-            _asesoria()
+            _dispositivo( alias )
           ,
         )
-      )
     );
   }
-  Widget _asesoria() {
+  Widget _dispositivo(String alias) {
 
     return FutureBuilder(
-      future: directusProvider.obtenerAsistenciaDetalle(),
+      future: directusProvider.obtenerDispositivoDetalle(alias),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         
         if ( snapshot.hasData ) {
-          final asistencia = snapshot.data;
+          final dispositivo = snapshot.data;
 
           return Container(
             child: Column(children: <Widget>[
               Image(
-                image: NetworkImage( asistencia.imagen.fullUrl ),
+                image: NetworkImage( dispositivo.imagen.fullUrl ),
                 fit: BoxFit.fill, 
                 width: MediaQuery.of(context).size.width,
               ),
-              Text(asistencia.asesoria, textAlign: TextAlign.center, style: GoogleFonts.roboto(fontSize: 40.0, color: Color(0xFF212529))).py16(),
+              Text(dispositivo.dispositivo, textAlign: TextAlign.center, style: GoogleFonts.roboto(fontSize: 40.0, color: Color(0xFF212529))).py16(),
               Html(
                 defaultTextStyle: GoogleFonts.roboto(color: Colors.black, fontSize: 16.0),
-                data: asistencia.descripcion
+                data: dispositivo.descripcion
               ).p12(),
               RaisedButton(
                 padding: EdgeInsets.symmetric(horizontal: 40.0),

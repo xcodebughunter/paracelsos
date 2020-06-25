@@ -4,10 +4,16 @@ import 'package:paracelos/src/pages/autoria_page.dart';
 
 // Pages
 import 'package:paracelos/src/pages/bienvenida_page.dart';
+import 'package:paracelos/src/pages/chat_page.dart';
+import 'package:paracelos/src/pages/conferencia_page.dart';
 import 'package:paracelos/src/pages/contacto_page.dart';
+import 'package:paracelos/src/pages/dispositivo_page.dart';
 import 'package:paracelos/src/pages/inicio_page.dart';
+import 'package:paracelos/src/pages/nosotros_page.dart';
 import 'package:paracelos/src/pages/politicas_page.dart';
+import 'package:paracelos/src/pages/suplemento_page.dart';
 import 'package:paracelos/src/pages/terminos_page.dart';
+import 'package:paracelos/src/pages/noticia_page.dart';
 
 // Theme
 import 'package:paracelos/src/theme/tema.dart';
@@ -43,6 +49,14 @@ class MyApp extends StatelessWidget {
         '/autoria'      : ( BuildContext context ) => AutoriaPage(),
         '/terminos'     : ( BuildContext context ) => TerminosPage(),
         '/politicas'    : ( BuildContext context ) => PoliticasPage(),
+        '/nosotros'     : ( BuildContext context ) => NosotrosPage(),
+        '/chat'         : ( BuildContext context ) => Chatpage(),
+
+        // Detalle
+        '/noticia'      : ( BuildContext context ) => NoticiaPage(),
+        '/conferencia'  : ( BuildContext context ) => ConferenciaPage(),
+        '/dispositivo'  : ( BuildContext context ) => DispositivoPage(),
+        '/suplemento'   : ( BuildContext context ) => SuplementoPage(),
       },
       theme: paracelsosTheme
     );

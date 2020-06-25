@@ -14,24 +14,25 @@ class _AutoriaPageState extends State<AutoriaPage> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      backgroundColor: Color(0xFFE5E5E5),
-      appBar: AppBar(
+    AppBar appBar = AppBar(
         title: Image(
           image: AssetImage('assets/images/logo_horizontal_blue.png'),
           width: MediaQuery.of(context).size.width * 0.5,
         ),
-      ),
+      );
+
+    return Scaffold(
+      backgroundColor: Color(0xFFE5E5E5),
+      appBar: appBar,
       body: Column(
         children: <Widget>[
-          _autoriaSeccion()
+          _autoriaSeccion(appBar.preferredSize.height)
         ],
       )
     );
   }
 
-  Widget _autoriaSeccion() {
+  Widget _autoriaSeccion(double appBarHeight) {
 
     return FutureBuilder(
       future: directusProvider.obtenerAutoria(),
@@ -39,7 +40,7 @@ class _AutoriaPageState extends State<AutoriaPage> {
         
         if ( snapshot.hasData ) {
           return Container(
-            height: 300,
+            height: MediaQuery.of(context).size.height - (appBarHeight * 2),
             child: PageView.builder(
               physics: (snapshot.data != null) ? ScrollPhysics() : NeverScrollableScrollPhysics(),
               controller: PageController(
