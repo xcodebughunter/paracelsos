@@ -48,8 +48,7 @@ class _ProductosPageState extends State<ProductosPage> {
       builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
         
         if ( snapshot.hasData ) {
-          return 
-                ListView.builder(
+          return ListView.builder(
                   physics: (snapshot.data.length > 1) ? ScrollPhysics() : NeverScrollableScrollPhysics(),
                   controller: PageController(
                     viewportFraction: 1,

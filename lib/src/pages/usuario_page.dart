@@ -17,7 +17,6 @@ class _UsuarioPageState extends State<UsuarioPage> {
   @override
   Widget build(BuildContext context) {
   
-    final String alias = ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFE5E5E5),
