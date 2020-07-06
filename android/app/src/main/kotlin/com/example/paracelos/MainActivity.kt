@@ -1,4 +1,4 @@
-package com.example.paracelos
+package com.paracelsosEducacion.app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

@@ -49,9 +49,9 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         // Int - Siempre debe aumentar
-        versionCode 2
+        versionCode 3
         // Primero -> Version | Segundo -> Actualizaciones | Tercero -> Corrección de errores
-        versionName "1.0.1"
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
