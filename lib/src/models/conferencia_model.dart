@@ -24,6 +24,7 @@ class Conferencia {
   String conferencia;
   String alias;
   String descripcion;
+  String video;
   Image imagen;
 
   Conferencia({
@@ -32,6 +33,7 @@ class Conferencia {
     this.alias,
     this.descripcion,
     this.imagen,
+    this.video
   });
 
   Conferencia.fromJsonMap( Map<String, dynamic> json ) {
@@ -40,6 +42,7 @@ class Conferencia {
     alias         = json['alias'];
     conferencia   = json['conferencia'];
     descripcion   = json['descripcion'];
+    video         = json['video_app'];
     imagen        = Image.fromJsonMap(json['imagen']['data']);
 
   }

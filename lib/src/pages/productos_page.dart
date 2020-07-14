@@ -23,11 +23,11 @@ class _ProductosPageState extends State<ProductosPage> {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab( text: 'Suplementos'),
-                Tab( text: 'Dispositivos'),
+                Tab( text: 'Suplementos \n nutricionales'),
+                Tab( text: 'Dispositivos \n médicos'),
               ],
             ),
-            title: Text('Productos', style: GoogleFonts.roboto(fontSize: 20.0, color: Colors.white)),
+            title: Text('Catálogo', style: GoogleFonts.roboto(fontSize: 20.0, color: Colors.white)),
             leading: Container(),
           ),
           body: TabBarView(

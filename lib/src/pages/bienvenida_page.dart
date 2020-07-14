@@ -29,12 +29,7 @@ class BienvenidaPage extends StatelessWidget {
                   image: AssetImage('assets/images/logo_vertical_blue.png'),
                   width: MediaQuery.of(context).size.width * 0.7,
                 ).pOnly(bottom: 40.0).centered(),
-                Text(
-                  'Toma el control de tu salud',
-                  style: GoogleFonts.roboto(
-                    textStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20.0)
-                  )
-                ).pSymmetric(v: 30.0),
+                Divider().pSymmetric(v: 30.0),
                 RaisedButton(
                   color: Color(0xFFA2ADBC),
                   textColor: Color(0xFFFFFFFF),

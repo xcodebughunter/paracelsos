@@ -224,7 +224,7 @@ class DirectusProvider {
     _cargandoConferencias = true;
 
     final url = Uri.https(_url, 'paracelsos/items/conferencias', {
-      'fields'  : 'status,conferencia,descripcion,tag,imagen.data,alias'
+      'fields'  : 'status,conferencia,descripcion,tag,imagen.data,alias,video'
     });
 
     final resp = await http.get( url, headers: { 'Content-Type': 'application/json', 'charset': 'utf-8' } );
@@ -245,7 +245,7 @@ class DirectusProvider {
     _cargandoConferenciaDetalle = true;
 
     final url = Uri.https(_url, 'paracelsos/items/conferencias', {
-      'fields'  : 'status,conferencia,descripcion,tag,imagen.data,alias',
+      'fields'  : 'status,conferencia,descripcion,tag,imagen.data,alias,video_app',
       'filter[alias][eq]': alias
     });
 

@@ -57,15 +57,6 @@ class _NavegacionLateral extends StatelessWidget {
               ],
             )
           ).pOnly(bottom: 10.0),
-          // ListTile(
-          //   leading: Icon(Icons.contact_mail, color: Theme.of(context).accentColor),
-          //   title: Text('Contacto'),
-          //   trailing: Icon( Icons.keyboard_arrow_right ),
-          //   onTap: () {
-          //     Navigator.pop(context);
-          //     Navigator.pushNamed(context, '/contacto');
-          //   }
-          // ),
           ListTile(
             leading: Icon(Icons.chat, color: Theme.of(context).accentColor),
             title: Text('Chat'),
@@ -141,12 +132,12 @@ class _Navegacion extends StatelessWidget {
         onTap: (i) => navegacionModel.paginaActual = i,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.chrome_reader_mode),
             title: Text('Noticias', style: TextStyle(fontSize: 12)),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_shopping_cart),
-            title: Text('Productos', style: TextStyle(fontSize: 12)),
+            title: Text('Catálogo', style: TextStyle(fontSize: 12)),
           ),
           BottomNavigationBarItem(
             icon: Image(
@@ -157,11 +148,11 @@ class _Navegacion extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.group),
-            title: Text('Conferencias', style: TextStyle(fontSize: 12),),
+            title: Text('Conf. Salud', style: TextStyle(fontSize: 12),),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.videocam),
-            title: Text('Asistencia', style: TextStyle(fontSize: 12)),
+            title: Text('Asist. Salud', style: TextStyle(fontSize: 12)),
           ),
         ])
     );

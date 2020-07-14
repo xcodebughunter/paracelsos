@@ -34,21 +34,21 @@ class _ParacelsosPageState extends State<ParacelsosPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFE5E5E5),
-        body: Column(
-          children: <Widget>[
-            _banner(_screenSize),
-            Text('Última noticia', style: GoogleFonts.roboto(fontSize: 20.0)).py12(),
-            Divider(
-              color: Color(0xFF1C3664),
-              height: 0.0,
-              thickness: 5.0,
-              indent: _screenSize.width * 0.40,
-              endIndent: _screenSize.width * 0.40,
-            ),
-            Expanded(
-              child: _ultimaNoticia().centered(),
-            )
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              _banner(_screenSize),
+              Text('Última noticia', style: GoogleFonts.roboto(fontSize: 20.0)).py12(),
+              Divider(
+                color: Color(0xFF1C3664),
+                height: 0.0,
+                thickness: 5.0,
+                indent: _screenSize.width * 0.40,
+                endIndent: _screenSize.width * 0.40,
+              ).pOnly(bottom: 10.0),
+              _ultimaNoticia().centered(),
+            ],
+          )
         )
       )
     );
