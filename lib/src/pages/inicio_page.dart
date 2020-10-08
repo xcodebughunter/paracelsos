@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:provider/provider.dart';
-import 'package:paracelos/src/shared_preferences/preferencias_usuario.dart';
+import 'package:paracelsos/src/shared_preferences/preferencias_usuario.dart';
 
 // Pages
-import 'package:paracelos/src/pages/noticias_page.dart';
-import 'package:paracelos/src/pages/paracelsos_page.dart';
-import 'package:paracelos/src/pages/preguntar_page.dart';
-import 'package:paracelos/src/pages/productos_page.dart';
-import 'package:paracelos/src/pages/usuario_page.dart';
+import 'package:paracelsos/src/pages/noticias_page.dart';
+import 'package:paracelsos/src/pages/paracelsos_page.dart';
+import 'package:paracelsos/src/pages/preguntar_page.dart';
+import 'package:paracelsos/src/pages/productos_page.dart';
+import 'package:paracelsos/src/pages/usuario_page.dart';
 
 class InicioPage extends StatelessWidget {
   final prefs = new PreferenciasUsuario();

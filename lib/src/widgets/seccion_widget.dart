@@ -3,7 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:paracelos/src/models/secciones_model.dart';
+import 'package:paracelsos/src/models/secciones_model.dart';
 
 
 class SeccionItem extends StatelessWidget {

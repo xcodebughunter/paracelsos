@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paracelos/src/providers/directus_provider.dart';
+import 'package:paracelsos/src/providers/directus_provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 

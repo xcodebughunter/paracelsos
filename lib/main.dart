@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:paracelos/src/pages/autoria_page.dart';
+import 'package:paracelsos/src/pages/autoria_page.dart';
 
 // Pages
-import 'package:paracelos/src/pages/bienvenida_page.dart';
-import 'package:paracelos/src/pages/chat_page.dart';
-import 'package:paracelos/src/pages/conferencia_page.dart';
-import 'package:paracelos/src/pages/contacto_page.dart';
-import 'package:paracelos/src/pages/dispositivo_page.dart';
-import 'package:paracelos/src/pages/inicio_page.dart';
-import 'package:paracelos/src/pages/nosotros_page.dart';
-import 'package:paracelos/src/pages/politicas_page.dart';
-import 'package:paracelos/src/pages/suplemento_page.dart';
-import 'package:paracelos/src/pages/terminos_page.dart';
-import 'package:paracelos/src/pages/noticia_page.dart';
+import 'package:paracelsos/src/pages/bienvenida_page.dart';
+import 'package:paracelsos/src/pages/chat_page.dart';
+import 'package:paracelsos/src/pages/conferencia_page.dart';
+import 'package:paracelsos/src/pages/contacto_page.dart';
+import 'package:paracelsos/src/pages/dispositivo_page.dart';
+import 'package:paracelsos/src/pages/inicio_page.dart';
+import 'package:paracelsos/src/pages/nosotros_page.dart';
+import 'package:paracelsos/src/pages/politicas_page.dart';
+import 'package:paracelsos/src/pages/suplemento_page.dart';
+import 'package:paracelsos/src/pages/terminos_page.dart';
+import 'package:paracelsos/src/pages/noticia_page.dart';
 
 // Theme
-import 'package:paracelos/src/theme/tema.dart';
+import 'package:paracelsos/src/theme/tema.dart';
 
 // Shared Preference
-import 'package:paracelos/src/shared_preferences/preferencias_usuario.dart';
+import 'package:paracelsos/src/shared_preferences/preferencias_usuario.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

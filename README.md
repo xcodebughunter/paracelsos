@@ -1,4 +1,4 @@
-# paracelos
+# paracelsos
 
 A new Flutter project.
 

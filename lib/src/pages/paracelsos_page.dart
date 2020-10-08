@@ -4,9 +4,9 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'package:paracelos/src/models/banner_model.dart';
-import 'package:paracelos/src/providers/directus_provider.dart';
-import 'package:paracelos/src/widgets/noticia_widget.dart';
+import 'package:paracelsos/src/models/banner_model.dart';
+import 'package:paracelsos/src/providers/directus_provider.dart';
+import 'package:paracelsos/src/widgets/noticia_widget.dart';
 
 class ParacelsosPage extends StatefulWidget {
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:paracelos/src/models/secciones_model.dart';
-import 'package:paracelos/src/providers/directus_provider.dart';
-import 'package:paracelos/src/widgets/seccion_widget.dart';
+import 'package:paracelsos/src/models/secciones_model.dart';
+import 'package:paracelsos/src/providers/directus_provider.dart';
+import 'package:paracelsos/src/widgets/seccion_widget.dart';
 
 class AutoriaPage extends StatefulWidget {
 

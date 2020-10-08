@@ -1,15 +1,15 @@
 
 import 'package:http/http.dart' as http;
-import 'package:paracelos/src/models/asesoria_model.dart';
+import 'package:paracelsos/src/models/asesoria_model.dart';
 
 import 'dart:convert';
 
-import 'package:paracelos/src/models/banner_model.dart';
-import 'package:paracelos/src/models/conferencia_model.dart';
-import 'package:paracelos/src/models/dispositivo_model.dart';
-import 'package:paracelos/src/models/noticia_model.dart';
-import 'package:paracelos/src/models/secciones_model.dart';
-import 'package:paracelos/src/models/suplemento_model.dart';
+import 'package:paracelsos/src/models/banner_model.dart';
+import 'package:paracelsos/src/models/conferencia_model.dart';
+import 'package:paracelsos/src/models/dispositivo_model.dart';
+import 'package:paracelsos/src/models/noticia_model.dart';
+import 'package:paracelsos/src/models/secciones_model.dart';
+import 'package:paracelsos/src/models/suplemento_model.dart';
 
 class DirectusProvider {
   

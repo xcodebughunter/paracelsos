@@ -1,4 +1,4 @@
-import 'package:paracelos/src/models/image_model.dart';
+import 'package:paracelsos/src/models/image_model.dart';
 
 class Asesorias {
 

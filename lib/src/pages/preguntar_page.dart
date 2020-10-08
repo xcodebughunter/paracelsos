@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paracelos/src/providers/directus_provider.dart';
-import 'package:paracelos/src/widgets/catalogo_widget.dart';
+import 'package:paracelsos/src/providers/directus_provider.dart';
+import 'package:paracelsos/src/widgets/catalogo_widget.dart';
 
 class PreguntarPage extends StatefulWidget {
 
